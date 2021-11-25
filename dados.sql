@@ -182,3 +182,6 @@ INSERT INTO `utente` (`Numero`, `Nome`, `Telefone`, `Morada`, `Email`, `Tipo_Doc
 
 -- utente_suspenso
 
+
+-- #23/11/2021
+
