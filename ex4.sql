@@ -1,9 +1,9 @@
 delete from espaco_de_arrumacao;
 delete from armario;
 delete from prateleira;
+delete from exemplar;
 delete from publicacao_fisica;
 delete from estado_de_conservacao;
-delete from exemplar;
 delete from emprestimo;
 
 
