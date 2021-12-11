@@ -1,6 +1,6 @@
 DELETE FROM area_tematica; 								-- FEITO
 DELETE FROM andar;										-- FEITO
-DELETE FROM armario;
+DELETE FROM armario;									-- FEITO
 DELETE FROM autor;										-- FEITO
 DELETE FROM autoria_de_livro;
 DELETE FROM autoria_de_monografia;
@@ -10,11 +10,11 @@ DELETE FROM edicao_de_livro;
 DELETE FROM edicao_de_periodico;
 DELETE FROM editora;									-- FEITO
 DELETE FROM editora_ou_periodico;						-- FEITO
-DELETE FROM emprestimo;
+DELETE FROM emprestimo;									-- FEITO
 DELETE FROM emprestimo_com_multa;
-DELETE FROM espaco_de_arrumacao;
+DELETE FROM espaco_de_arrumacao;						-- FEITO
 DELETE FROM estado_de_conservacao;
-DELETE FROM exemplar;
+DELETE FROM exemplar;									-- FEITO
 DELETE FROM feed;
 DELETE FROM lista_de_leitura;
 DELETE FROM livro;
@@ -24,10 +24,10 @@ DELETE FROM palavra_chave_descreve_publicacao;
 DELETE FROM palavra_chave_tag;
 DELETE FROM periodicidade;								-- FEITO
 DELETE FROM periodico;
-DELETE FROM prateleira;
+DELETE FROM prateleira;									-- FEITO
 DELETE FROM publicacao;
 DELETE FROM publicacao_digital;
-DELETE FROM publicacao_fisica;
+DELETE FROM publicacao_fisica;							-- FEITO
 DELETE FROM reserva;
 DELETE FROM revista;
 DELETE FROM tipo_de_monografia;							-- FEITO
@@ -125,7 +125,7 @@ INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('11', 'EuroNew
 -- lista_de_leitura
 -- livro
 -- livro_em_lista_leitura
--- monografi-
+-- monografia
 -- palavra_chave_descreve_publicacao
 -- palavra_chave_tag
 -- periodicidade
@@ -147,7 +147,9 @@ INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_pub
 INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('8', 'Europa, Hoje - Reorganizacao do bloco', 'Europa, hoje', '1258', '2020-11-02', '2020', '321', '/caminho/capa.png', '/caminho/capa.png', '88', '123', '2020-12-23', '12', '3');
 INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('9', 'Motivacao organizacional - acelerar o crescimento das equipas', 'Motivacao organizacional', '1300', '2018-11-11', '2018', '123', '/caminho/capa.png', '/caminho/capa.png', '120', '34', '2019-12-25', '10', '4');
 INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('10', 'Jornal de Negocios', 'JN', '1609', '2021-11-01', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-01', '2', '3');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('11', 'Jornal de Negocios', 'JN', '1610', '2021-11-01', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-01', '2', '3');
+
+
+/* INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('11', 'Jornal de Negocios', 'JN', '1610', '2021-11-01', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-01', '2', '3');
 INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('12', 'Jornal de Negocios', 'JN', '1611', '2021-11-02', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-02', '2', '3');
 INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('13', 'Jornal de Negocios', 'JN', '1612', '2021-11-03', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-03', '2', '3');
 INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('14', 'Jornal de Negocios', 'JN', '1613', '2021-11-04', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-04', '2', '3');
@@ -155,7 +157,7 @@ INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_pub
 INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('16', 'BBC News - Tech', 'BBC Tech', '1614', '2021-10-02', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-10-03', '1', '4');
 INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('17', 'BBC News - Tech', 'BBC Tech', '1614', '2021-10-03', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-10-04', '1', '4');
 INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('18', 'BBC News - Tech', 'BBC Tech', '1614', '2021-10-04', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-10-05', '1', '4');
-
+*/
 /*('19', 'EuroNews - Noticias Europa', 'EuroNews', '1624', '2021-08-08', '2021', '33', '/caminho/capa.png', '/caminho/capa.png', '2', '33', '2021-08-10', NULL, NULL);
 ('20', 'EuroNews - Noticias Europa', 'EuroNews', '1624', '2021-08-08', '2021', '33', '/caminho/capa.png', '/caminho/capa.png', '2', '33', '2021-08-10', NULL, NULL);
 ('21', 'EuroNews - Noticias Europa', 'EuroNews', '1624', '2021-08-08', '2021', '33', '/caminho/capa.png', '/caminho/capa.png', '2', '33', '2021-08-10', NULL, NULL);
@@ -163,7 +165,6 @@ INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_pub
 */
 
 -- publicacao_digital
--- publicacao_fisica
 -- reserva
 -- revista
 -- tipo_de_monografia
@@ -181,4 +182,86 @@ INSERT INTO `utente` (`Numero`, `Nome`, `Telefone`, `Morada`, `Email`, `Tipo_Doc
 INSERT INTO `utente` (`Numero`, `Nome`, `Telefone`, `Morada`, `Email`, `Tipo_Doc_Identificacao`, `Nr_Doc_Identificacao`) VALUES ('6', 'Yannick Bolaise', '912345606', 'Rua Branca Édmee', 'bolaise@westham.com', 'CC', '20001');
 
 -- utente_suspenso
+
+
+
+
+-- Espaço de arrumação
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('1', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('2', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('3', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('4', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('5', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('6', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('7', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('8', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('9', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('10', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('11', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('12', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('13', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('14', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('15', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('16', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('17', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('18', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('19', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('20', '0', NULL);
+INSERT INTO `espaco_de_arrumacao` (`Id`, `Nivel_de_ocupacao`, `Area_Tematica_Id`) VALUES ('21', '0', NULL);
+
+-- Armário
+
+INSERT INTO `armario` (`Andar_Numero`, `Espaco_de_arrumacao_Id`, `Letra`) VALUES ('0', '1', 'A');
+INSERT INTO `armario` (`Andar_Numero`, `Espaco_de_arrumacao_Id`, `Letra`) VALUES ('0', '2', 'B');
+INSERT INTO `armario` (`Andar_Numero`, `Espaco_de_arrumacao_Id`, `Letra`) VALUES ('1', '3', 'A');
+INSERT INTO `armario` (`Andar_Numero`, `Espaco_de_arrumacao_Id`, `Letra`) VALUES ('1', '4', 'B');
+INSERT INTO `armario` (`Andar_Numero`, `Espaco_de_arrumacao_Id`, `Letra`) VALUES ('2', '5', 'A');
+INSERT INTO `armario` (`Andar_Numero`, `Espaco_de_arrumacao_Id`, `Letra`) VALUES ('2', '6', 'B');
+
+-- Prateleiras
+
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('0', 'A', '7', '1');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('0', 'A', '8', '2');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('0', 'B', '9', '3');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('0', 'B', '10', '4');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('1', 'A', '11', '5');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('1', 'A', '12', '6');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('1', 'B', '13', '7');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('1', 'B', '14', '8');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('2', 'A', '15', '9');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('2', 'A', '16', '10');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('2', 'B', '17', '11');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('2', 'B', '18', '12');
+
+-- Publicação física
+
+INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('1');
+INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('2');
+INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('3');
+INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('4');
+INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('5');
+INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('6');
+INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('7');
+INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('8');
+INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('9');
+INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('10');
+
+-- Estados de conservacao
+
+INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('LIXO');
+INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('MAU');
+INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('USADO');
+INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('BOM');
+INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('NOVO');
+
+-- EXEMPLAR
+
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('1', '1', NULL, NULL, NULL, 1, 'BOM', '0', 'A', '1');
+
+
+-- emprestimo
+INSERT INTO `emprestimo` (`Numero`, `Data_hora`, `Publicacao_Id`, `Exemplar_Nr`, `Utente_Numero`, `Data_de_devolucao_limite`, `Qtd_de_prolongamentos`, `Data_de_devolucao`) VALUES ('1', '2021-12-10 16:55:24.000000', '1', '1', '1', '2021-12-16', '0', '2021-12-10 16:55:24.000000');
+
+
+
 
