@@ -8,6 +8,8 @@ DELETE FROM capitulo_ou_artigo;
 DELETE FROM documento_de_identificao;					-- FEITO
 DELETE FROM edicao_de_livro;
 DELETE FROM edicao_de_periodico;
+DELETE FROM livro;
+DELETE FROM periodico;
 DELETE FROM editora;									-- FEITO
 DELETE FROM editora_ou_periodico;						-- FEITO
 DELETE FROM emprestimo;									-- FEITO
@@ -17,13 +19,12 @@ DELETE FROM estado_de_conservacao;
 DELETE FROM exemplar;									-- FEITO
 DELETE FROM feed;
 DELETE FROM lista_de_leitura;
-DELETE FROM livro;
+
 DELETE FROM livro_em_lista_leitura;
 DELETE FROM monografia;
 DELETE FROM palavra_chave_descreve_publicacao;
 DELETE FROM palavra_chave_tag;
 DELETE FROM periodicidade;								-- FEITO
-DELETE FROM periodico;
 DELETE FROM prateleira;									-- FEITO
 DELETE FROM publicacao;
 DELETE FROM publicacao_digital;
@@ -40,35 +41,23 @@ INSERT INTO `andar` (`Numero`) VALUES ('0'), ('1'), ('2');
 
 -- ÁREAS TEMÁTICAS
 
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('1', 'Informatica', NULL);
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('2', 'Gestao', NULL);
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('3', 'Historia', NULL);
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('4', 'Sociologia', NULL);
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('5', 'Bases de dados', '1');
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('6', 'Programacao', '1');
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('7', 'Programacao Orientada a Objetos', '6');
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('8', 'Programacao Web', '6');
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('9', 'Gestao Industrial', '2');
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('10', 'Gestao de Recursos Humanos', '2');
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('11', 'Gestao de Empresas', '2');
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('12', 'História Contemporanea', '3');
-INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('13', 'História de Portugal', '3');
+INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('1', 'Informática', NULL);
+INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('2', 'Bases de Dados', '1');
+INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('3', 'Programação', '1');
+INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('4', 'Sistemas Operativos e Redes', '1');
+INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('5', 'Sociologia e Políticas Públicas', NULL);
+INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('6', 'Ciência Política', '5');
+INSERT INTO `area_tematica` (`Id`, `Nome`, `Area_Tematica_superior_Id`) VALUES ('7', 'Economia', NULL);
+
 
 -- ARMARIO
 
--- AUTOR
 
-INSERT INTO `autor` (`id`, `Nome`) VALUES ('1', 'Joao Augusto');
-INSERT INTO `autor` (`id`, `Nome`) VALUES ('2', 'Maria Cristas');
-INSERT INTO `autor` (`id`, `Nome`) VALUES ('3', 'Helder Ferreira');
-INSERT INTO `autor` (`id`, `Nome`) VALUES ('4', 'Helena Jorge');
-INSERT INTO `autor` (`id`, `Nome`) VALUES ('5', 'Fabio Andrade');
-INSERT INTO `autor` (`id`, `Nome`) VALUES ('6', 'Cristina Lopes');
-INSERT INTO `autor` (`id`, `Nome`) VALUES ('7', 'Humberto Diniz');
-INSERT INTO `autor` (`id`, `Nome`) VALUES ('8', 'Clara Rodrigues');
+
 
 
 -- autoria_de_livro
+
 -- autoria_de_monografia
 -- capitulo_ou_artigo
 -- documento_de_identificao
@@ -83,34 +72,8 @@ INSERT INTO `documento_de_identificao` (`Utente_numero`, `Tipo`, `Numero`) VALUE
 -- edicao_de_livro
 -- edicao_de_periodico
 
--- editora_ou_periodico
 
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('1');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('2');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('3');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('4');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('5');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('6');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('7');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('8');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('9');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('10');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('11');
-INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('12');
--- editora
 
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('1', 'Porto Editora');
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('2', 'LeYa');
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('3', 'Planeta');
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('4', 'Editorial Presenca');
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('5', 'Gradiva');
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('6', 'Platano Editora');
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('7', 'Edicoes Piaget');
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('8', 'Jornal Negocios');
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('9', 'BBC News');
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('10', 'Publico');
-INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('11', 'EuroNews');
--- INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('12', 'PERIODICO');
 
 
 
@@ -134,38 +97,8 @@ INSERT INTO `periodicidade` VALUES ('Anual'),('Diária'),('Mensal'),('Semanal'),
 
 
 -- periodico
--- prateleira
--- publicacao
-
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('1', 'Fundamentos de Bases de dados - Introdução UML e SQL', 'Fundamentos de Bases de dados', '1643', '2015-11-03', '2015', '500', '/caminho/para/a/capa.png', '/caminho/para/a/capa.png', '12', '34', '2019-11-20', '5', '5');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('2', 'PROGRAMAÇÃO EM JAVA - Java Orientado a Objetos', 'PROGRAMAÇÃO EM JAVA', '1646', '2002-08-09', '2002', '784', '/caminho/para/a/capa.png', '/caminho/para/a/capa.png', '29', '7', '2005-11-18', '7', '4');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('3', 'Bases de dados - MySQL & UML Avançado', 'Bases de dados', '1647', '2011-06-13', '2011', '432', '/caminho/para/a/capa.png', '/caminho/para/a/capa.png', '23', '88', '2021-07-03', '5', '3');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('4', 'PHP & HTML - Do zero ao cem', 'PHP x HTML', '1650', '2021-09-01', '2021', '334', '/caminho/para/a/capa.png', '/caminho/para/a/capa.png', '12', '1', '2021-10-17', '8', '3');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('5', 'Gestao executiva - executivos de topo', 'Gestao executiva', '1252', '2018-07-17', '2018', '456', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-05-02', '11', '2');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('6', 'Inclusao social - Abordagem em zonas rurais', 'Inclusao social', '1255', '2014-11-16', '2014', '674', '/caminho/capa.png', '/caminho/capa.png', '77', '2', '2019-06-21', '4', '5');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('7', 'Fim da Monarquia - visao de um pro-monarquia', 'Fim da Monarquia', '1256', '2012-02-02', '2012', '102', '/caminho/capa.png', '/caminho/capa.png', '7', '2', '2014-11-20', '13', '3');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('8', 'Europa, Hoje - Reorganizacao do bloco', 'Europa, hoje', '1258', '2020-11-02', '2020', '321', '/caminho/capa.png', '/caminho/capa.png', '88', '123', '2020-12-23', '12', '3');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('9', 'Motivacao organizacional - acelerar o crescimento das equipas', 'Motivacao organizacional', '1300', '2018-11-11', '2018', '123', '/caminho/capa.png', '/caminho/capa.png', '120', '34', '2019-12-25', '10', '4');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('10', 'Jornal de Negocios', 'JN', '1609', '2021-11-01', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-01', '2', '3');
 
 
-/* INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('11', 'Jornal de Negocios', 'JN', '1610', '2021-11-01', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-01', '2', '3');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('12', 'Jornal de Negocios', 'JN', '1611', '2021-11-02', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-02', '2', '3');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('13', 'Jornal de Negocios', 'JN', '1612', '2021-11-03', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-03', '2', '3');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('14', 'Jornal de Negocios', 'JN', '1613', '2021-11-04', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-11-04', '2', '3');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('15', 'BBC News - Tech', 'BBC Tech', '1614', '2021-10-01', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-10-02', '1', '4');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('16', 'BBC News - Tech', 'BBC Tech', '1614', '2021-10-02', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-10-03', '1', '4');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('17', 'BBC News - Tech', 'BBC Tech', '1614', '2021-10-03', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-10-04', '1', '4');
-INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('18', 'BBC News - Tech', 'BBC Tech', '1614', '2021-10-04', '2021', '50', '/caminho/capa.png', '/caminho/capa.png', '0', '0', '2021-10-05', '1', '4');
-*/
-/*('19', 'EuroNews - Noticias Europa', 'EuroNews', '1624', '2021-08-08', '2021', '33', '/caminho/capa.png', '/caminho/capa.png', '2', '33', '2021-08-10', NULL, NULL);
-('20', 'EuroNews - Noticias Europa', 'EuroNews', '1624', '2021-08-08', '2021', '33', '/caminho/capa.png', '/caminho/capa.png', '2', '33', '2021-08-10', NULL, NULL);
-('21', 'EuroNews - Noticias Europa', 'EuroNews', '1624', '2021-08-08', '2021', '33', '/caminho/capa.png', '/caminho/capa.png', '2', '33', '2021-08-10', NULL, NULL);
-('22', 'EuroNews - Noticias Europa', 'EuroNews', '1624', '2021-08-08', '2021', '33', '/caminho/capa.png', '/caminho/capa.png', '2', '33', '2021-08-10', NULL, NULL);
-*/
-
--- publicacao_digital
--- reserva
 -- revista
 -- tipo_de_monografia
 
@@ -231,10 +164,101 @@ INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_
 INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('2', 'A', '15', '1');
 INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('2', 'A', '16', '2');
 INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('2', 'B', '17', '1');
-INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('2', 'B', '18', '2');
+INSERT INTO `prateleira` (`Andar_Numero`, `Armario_Letra`, `Espaco_de_arrumacao_Id`, `Numero`) VALUES ('2', 'B', '18', '12');
 
--- Publicação física
 
+-- Estados de conservacao
+
+INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('INUTILIZAVEL');
+INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('MAU');
+INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('USADO');
+INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('BOM');
+INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('NOVO');
+
+
+-- DADOS REFERENTES A LIVROS
+
+-- Publicação
+INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('1', 'Bases de Dados - Fundamentos e aplicações', 'Bases de Dados', '1056', '2021-02-01', '2021', '488', '/capas/adefinir.png', '/capas/adefinir.png', '0', '0', '2021-02-15', '2', '5');
+INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('2', 'Bases de Dados Relacionais - Implementação com MySQL', 'Bases de Dados Relacionais\r\n', '2018', '2011-10-09', '2011', '376', '/capas/adefinir.png', '/capas/adefinir.png', '0', '0', '2011-10-09', '2', '4');
+INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('3', 'SQL - Structured Query Language\r\n', 'SQL', '2020', '2014-05-05', '2014', '408', '/capas/adefinir.png', '/capas/adefinir.png', '0', '0', '2014-05-05', '2', '3');
+INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('4', 'Programação em Python - Introdução à programação utilizando múltiplos paradigmas', 'Programação em Python', '2049', '2016-10-19', '2016', '610', '/capas/adefinir.png', '/capas/adefinir.png', '0', '0', '2016-10-19', '3', '3');
+INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('5', 'Fundamentos da Programação - Utilizando múltiplos paradigmas', 'Fundamentos da Programação', '2051', '2020-10-12', '2020', '468', '/capas/adefinir.png', '/capas/adefinir.png', '0', '0', '2020-10-12', '3', '5');
+INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('6', 'Desenvolvimento Orientado por Objectos\r\n', 'Desenvolvimento Orientado por Objectos\r\n', '2052', '2017-11-11', '2017', '232', '/capas/adefinir.png', '/capas/adefinir.png', '0', '0', '2017-11-11', '3', '2');
+INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('7', 'A eficácia dos sistemas de petições na Europa: o impacto da modernização do caso português, em particular\r\n', 'A eficácia dos sistemas de petições na Europa', '1513', '2017-04-18', '2017', '35', '/capas/adefinir.png', '/capas/adefinir.png', '0', '0', NULL, '6', '2');
+INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('8', 'Publicação de controlo: Sem tipo de publicação, sem exemplares', 'Publicação de controlo', '12345', '2021-07-01', '2021', '10', '/capas/adefinir.png', '/capas/adefinir.png', '0', '0', NULL, NULL, NULL);
+INSERT INTO `publicacao` (`Id`, `Nome`, `Nome_abreviado`, `Codigo`, `Data_de_publicacao`, `Ano_de_publicacao`, `Nr_Pags`, `Capa`, `Capa_em_miniatura`, `Qtd_Emprestimos`, `Qtd_Acessos`, `Data_de_aquisicao`, `Area_Tematica_Id`, `relevancia`) VALUES ('9', 'The Economist - World News, Politics, Economics, Business & Finance', 'The Economist', '1545', '1843-09-01', '1843', '30', '/capas/adefinir.png', '/capas/adefinir.png', '0', '0', NULL, '7', '5');
+
+
+-- Autor
+INSERT INTO `autor` (`id`, `Nome`) VALUES ('1', 'Feliz Gouveia');
+INSERT INTO `autor` (`id`, `Nome`) VALUES ('2', 'Orlando Belo');
+INSERT INTO `autor` (`id`, `Nome`) VALUES ('3', 'Luís Damas');
+INSERT INTO `autor` (`id`, `Nome`) VALUES ('4', 'João Pavão Martins');
+INSERT INTO `autor` (`id`, `Nome`) VALUES ('5', 'Maria dos Remédios Cravo');
+INSERT INTO `autor` (`id`, `Nome`) VALUES ('6', 'José Almeida');
+INSERT INTO `autor` (`id`, `Nome`) VALUES ('7', 'João Hugo Miranda');
+INSERT INTO `autor` (`id`, `Nome`) VALUES ('8', 'Tiago Tiburcío');
+
+-- Editora_ou_Periódico (introduzir apenas uma série de IDs)
+INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('1');
+INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('2');
+INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('3');
+INSERT INTO `editora_ou_periodico` (`Id`) VALUES ('4');
+
+
+-- Editora
+INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('1', 'FCA');
+INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('2', 'IST - Instituto Superior Técnico');
+INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('3', 'Edições Centro Atlântico');
+INSERT INTO `editora` (`Editora_ou_Periodico_Id`, `Nome`) VALUES ('4', 'The Economist Newspaper Ltd.');
+
+
+-- Livro
+INSERT INTO `livro` (`Id`, `Nome`, `Editora_Nome`) VALUES ('1', 'Bases de Dados - Fundamentos e aplicações', 'FCA');
+INSERT INTO `livro` (`Id`, `Nome`, `Editora_Nome`) VALUES ('2', 'Bases de Dados Relacionais - Implementação com MySQL', 'FCA');
+INSERT INTO `livro` (`Id`, `Nome`, `Editora_Nome`) VALUES ('3', 'SQL - Structured Query Language', 'FCA');
+INSERT INTO `livro` (`Id`, `Nome`, `Editora_Nome`) VALUES ('4', 'Programação em Python - Introdução à programação utilizando múltiplos paradigmas', 'IST - Instituto Superior Técnico');
+INSERT INTO `livro` (`Id`, `Nome`, `Editora_Nome`) VALUES ('5', 'Fundamentos da Programação - Utilizando múltiplos paradigmas', 'IST - Instituto Superior Técnico');
+INSERT INTO `livro` (`Id`, `Nome`, `Editora_Nome`) VALUES ('6', 'Desenvolvimento Orientado por Objectos', 'Edições Centro Atlântico');
+
+-- Monografia
+
+INSERT INTO `monografia` (`Publicacao_Id`, `Tipo_de_monografia_Nome`) VALUES ('7', 'Dissertação de Doutoramento');
+
+-- Periodico
+INSERT INTO `periodico` (`Editora_Nome`, `Editora_ou_Periodico_Id`, `Periodicidade_Nome`, `ISSN`, `Sigla`, `Nome`) VALUES ('The Economist Newspaper Ltd.', '4', 'Semanal', '00130613', 'TEN', 'The Economist - World News, Politics, Economics, Business & Finance');
+
+
+-- Autoria_de_Livro
+INSERT INTO `autoria_de_livro` (`Autor_id_`, `Livro_Id_`) VALUES ('1', '1');
+INSERT INTO `autoria_de_livro` (`Autor_id_`, `Livro_Id_`) VALUES ('2', '2');
+INSERT INTO `autoria_de_livro` (`Autor_id_`, `Livro_Id_`) VALUES ('3', '3');
+INSERT INTO `autoria_de_livro` (`Autor_id_`, `Livro_Id_`) VALUES ('4', '4');
+INSERT INTO `autoria_de_livro` (`Autor_id_`, `Livro_Id_`) VALUES ('4', '5');
+INSERT INTO `autoria_de_livro` (`Autor_id_`, `Livro_Id_`) VALUES ('5', '5');
+INSERT INTO `autoria_de_livro` (`Autor_id_`, `Livro_Id_`) VALUES ('6', '6');
+INSERT INTO `autoria_de_livro` (`Autor_id_`, `Livro_Id_`) VALUES ('7', '6');
+
+-- Autoria_de_monografia
+
+INSERT INTO `autoria_de_monografia` (`Autor_id_`, `Monografia_Id_`) VALUES ('8', '7');
+
+-- Edicao_de_livro
+INSERT INTO `edicao_de_livro` (`Livro_Id`, `Publicacao_Id`, `Numero`, `ISBN`) VALUES ('1', '1', '1', '978972722');
+INSERT INTO `edicao_de_livro` (`Livro_Id`, `Publicacao_Id`, `Numero`, `ISBN`) VALUES ('2', '2', '2', '727229215');
+INSERT INTO `edicao_de_livro` (`Livro_Id`, `Publicacao_Id`, `Numero`, `ISBN`) VALUES ('3', '3', '3', '727228294');
+INSERT INTO `edicao_de_livro` (`Livro_Id`, `Publicacao_Id`, `Numero`, `ISBN`) VALUES ('4', '4', '4', '898481474');
+INSERT INTO `edicao_de_livro` (`Livro_Id`, `Publicacao_Id`, `Numero`, `ISBN`) VALUES ('5', '5', '5', '898481085');
+INSERT INTO `edicao_de_livro` (`Livro_Id`, `Publicacao_Id`, `Numero`, `ISBN`) VALUES ('6', '6', '6', '896150136');
+
+-- Edicao_de_Periodico
+INSERT INTO `edicao_de_periodico` (`Periodico_Editora_ou_Periodico_Id`, `Publicacao_Id`, `Numero`) VALUES ('4', '9', '1');
+INSERT INTO `edicao_de_periodico` (`Periodico_Editora_ou_Periodico_Id`, `Publicacao_Id`, `Numero`) VALUES ('4', '9', '2');
+INSERT INTO `edicao_de_periodico` (`Periodico_Editora_ou_Periodico_Id`, `Publicacao_Id`, `Numero`) VALUES ('4', '9', '3');
+INSERT INTO `edicao_de_periodico` (`Periodico_Editora_ou_Periodico_Id`, `Publicacao_Id`, `Numero`) VALUES ('4', '9', '4');
+
+-- Publicação_fisica
 INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('1');
 INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('2');
 INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('3');
@@ -242,26 +266,64 @@ INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('4');
 INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('5');
 INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('6');
 INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('7');
-INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('8');
 INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('9');
-INSERT INTO `publicacao_fisica` (`Publicacao_Id`) VALUES ('10');
 
--- Estados de conservacao
+-- Publicação_digital
 
-INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('LIXO');
-INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('MAU');
-INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('USADO');
-INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('BOM');
-INSERT INTO `estado_de_conservacao` (`Nome`) VALUES ('NOVO');
-
--- EXEMPLAR
-
-INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('1', '1', NULL, NULL, NULL, 1, 'BOM', '0', 'A', '1');
-
-
--- emprestimo
-INSERT INTO `emprestimo` (`Numero`, `Data_hora`, `Publicacao_Id`, `Exemplar_Nr`, `Utente_Numero`, `Data_de_devolucao_limite`, `Qtd_de_prolongamentos`, `Data_de_devolucao`) VALUES ('1', '2021-12-10 16:55:24.000000', '1', '1', '1', '2021-12-16', '0', '2021-12-10 16:55:24.000000');
+INSERT INTO `publicacao_digital` (`Publicacao_Id`) VALUES ('7');
+INSERT INTO `publicacao_digital` (`Publicacao_Id`) VALUES ('9');
 
 
 
 
+-- Exemplar
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('1', '1', NULL, '2021-02-15', NULL, '0', 'NOVO', '0', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('1', '2', NULL, '2021-02-15', NULL, '1', 'NOVO', '0', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('1', '3', NULL, '2021-02-15', NULL, '1', 'NOVO', '0', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('2', '4', NULL, '2011-10-09', NULL, '0', 'BOM', '0', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('2', '5', NULL, '2011-10-09', NULL, '1', 'BOM', '0', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('2', '6', NULL, '2012-10-09', NULL, '1', 'BOM', '0', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('2', '7', NULL, '2013-10-09', NULL, '1', 'BOM', '0', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('3', '8', NULL, '2014-05-05', NULL, '0', 'USADO', '0', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('3', '9', NULL, '2015-05-05', NULL, '1', 'USADO', '0', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('3', '10', NULL, '2016-05-05', NULL, '1', 'USADO', '0', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('4', '11', NULL, '2016-12-19', NULL, '0', 'NOVO', '0', 'A', '2');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('4', '12', NULL, '2017-12-19', NULL, '1', 'NOVO', '0', 'A', '2');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('4', '13', NULL, '2018-12-19', NULL, '1', 'MAU', '0', 'A', '2');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('5', '14', NULL, '2020-11-30', NULL, '0', 'NOVO', '0', 'A', '2');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('5', '15', NULL, '2020-12-30', NULL, '1', 'NOVO', '0', 'A', '2');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('6', '16', NULL, '2017-11-21', NULL, '1', 'NOVO', '0', 'A', '2');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('7', '17', NULL, NULL, NULL, '0', 'NOVO', '1', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('9', '18', NULL, '2021-10-04', NULL, '0', 'NOVO', '2', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('9', '19', NULL, '2021-10-11', NULL, '0', 'INUTILIZAVEL', '2', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('9', '20', NULL, '2021-10-18', NULL, '0', 'USADO', '2', 'A', '1');
+INSERT INTO `exemplar` (`Publicacao_Id`, `Nr`, `Codigo_de_barras`, `Data_de_aquisicao`, `RFID`, `Pode_ser_emprestado`, `Estado_de_conservacao_Nome`, `Localizacao_Andar_Numero`, `Localizacao_Armario_Letra`, `Localizacao_Prateleira_Numero`) VALUES ('9', '21', NULL, '2021-10-25', NULL, '0', 'NOVO', '2', 'A', '1');
+
+
+
+-- Palavra_chave_Tag
+INSERT INTO `palavra_chave_tag` (`Palavra`) VALUES ('Bases'), ('Dados'), ('SQL'), ('Relacional'), ('Structured Query Language'); -- Bases de Dados
+INSERT INTO `palavra_chave_tag` (`Palavra`) VALUES ('Python'), ('Programação Orientada a Objetos'), ('Programação'), ('Paradigmas da Programação'); -- Programação
+INSERT INTO `palavra_chave_tag` (`Palavra`) VALUES ('Comportamento político'), ('Participação política'), ('Direito de petição');
+INSERT INTO `palavra_chave_tag` (`Palavra`) VALUES ('Economia Mundial'), ('Finanças');
+
+-- Palavra_chave_descreve_publicacao
+INSERT INTO `palavra_chave_descreve_publicacao` (`Palavra_chave_`, `Publicacao_Id_`) VALUES ('Bases', '1'), ('Dados', '1'), ('SQL', '1'), ('Bases', '2'), ('Dados', '2'), ('SQL', '2'), ('Relacional', '2'), ('Bases', '3'), ('Dados', '3'), ('SQL', '3'), ('Structured Query Language', '3');
+INSERT INTO `palavra_chave_descreve_publicacao` (`Palavra_chave_`, `Publicacao_Id_`) VALUES ('Python', '4'), ('Programação Orientada a Objetos', '4'), ('Programação Orientada a Objetos', '5'), ('Programação Orientada a Objetos', '6'), ('Paradigmas da Programação', '4'), ('Paradigmas da Programação', '5');
+INSERT INTO `palavra_chave_descreve_publicacao` (`Palavra_chave_`, `Publicacao_Id_`) VALUES ('Comportamento político', '7'), ('Direito de petição', '7'), ('Participação política', '7');
+INSERT INTO `palavra_chave_descreve_publicacao` (`Palavra_chave_`, `Publicacao_Id_`) VALUES ('Economia Mundial', '9'), ('Finanças', '9');
+
+-- reserva
+
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('1', '1', '2021-12-01 21:46:39', NULL, '2');
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('1', '2', '2021-09-14 21:46:39', NULL, '3');
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('1', '6', '2021-12-12 21:53:45', NULL, '2');
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('2', '5', '2021-11-21 21:55:44', NULL, '5');
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('2', '4', '2021-11-26 21:55:44', NULL, '6');
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('2', '2', '2021-03-16 21:55:44', NULL, '5');
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('2', '6', '2021-02-08 21:55:44', NULL, '6');
+
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('6', '1', '2021-12-09 14:43:06', NULL, '16');
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('6', '5', '2021-11-07 14:43:06', NULL, '16');
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('6', '3', '2021-10-03 14:44:12', NULL, '16');
+INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('6', '4', '2021-03-07 14:44:12', NULL, '16');
