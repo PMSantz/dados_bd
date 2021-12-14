@@ -327,3 +327,24 @@ INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemp
 INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('6', '5', '2021-11-07 14:43:06', NULL, '16');
 INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('6', '3', '2021-10-03 14:44:12', NULL, '16');
 INSERT INTO `reserva` (`Publicacao_Id_`, `Utente_Numero_`, `Data_e_Hora`, `Exemplar_escolhido_Publicacao_Id`, `Exemplar_Nr`) VALUES ('6', '4', '2021-03-07 14:44:12', NULL, '16');
+
+
+-- Lista_De_leitura
+INSERT INTO `lista_de_leitura` (`Utente_Numero`, `Nome`) VALUES ('2', 'Lista do Marco');
+INSERT INTO `lista_de_leitura` (`Utente_Numero`, `Nome`) VALUES ('4', 'Lista da Justa');
+
+
+-- Livros_lista_de_leitura
+INSERT INTO `livro_em_lista_leitura` (`Edicao_de_Livro_Livro_Id_`, `Edicao_de_Livro_Numero_`, `Lista_de_leitura_Utente_Numero_`, `Lista_de_leitura_Nome_`) VALUES ('1', '1', '2', 'Lista do Marco');
+INSERT INTO `livro_em_lista_leitura` (`Edicao_de_Livro_Livro_Id_`, `Edicao_de_Livro_Numero_`, `Lista_de_leitura_Utente_Numero_`, `Lista_de_leitura_Nome_`) VALUES ('3', '3', '2', 'Lista do Marco');
+INSERT INTO `livro_em_lista_leitura` (`Edicao_de_Livro_Livro_Id_`, `Edicao_de_Livro_Numero_`, `Lista_de_leitura_Utente_Numero_`, `Lista_de_leitura_Nome_`) VALUES ('4', '4', '2', 'Lista do Marco');
+INSERT INTO `livro_em_lista_leitura` (`Edicao_de_Livro_Livro_Id_`, `Edicao_de_Livro_Numero_`, `Lista_de_leitura_Utente_Numero_`, `Lista_de_leitura_Nome_`) VALUES ('5', '5', '2', 'Lista do Marco');
+INSERT INTO `livro_em_lista_leitura` (`Edicao_de_Livro_Livro_Id_`, `Edicao_de_Livro_Numero_`, `Lista_de_leitura_Utente_Numero_`, `Lista_de_leitura_Nome_`) VALUES ('6', '6', '2', 'Lista do Marco');
+INSERT INTO `livro_em_lista_leitura` (`Edicao_de_Livro_Livro_Id_`, `Edicao_de_Livro_Numero_`, `Lista_de_leitura_Utente_Numero_`, `Lista_de_leitura_Nome_`) VALUES ('2', '2', '4', 'Lista da Justa');
+
+-- Emprestimo
+
+INSERT INTO `emprestimo` (`Numero`, `Data_hora`, `Publicacao_Id`, `Exemplar_Nr`, `Utente_Numero`, `Data_de_devolucao_limite`, `Qtd_de_prolongamentos`, `Data_de_devolucao`) VALUES ('1', '2021-01-13 21:20:21', '1', '1', '3', '2021-01-23', '2', '2021-02-13'), ('2', '2021-09-01 21:20:22', '1', '2', '5', '2021-11-01', '2', '2021-09-11'), ('3', '2021-12-14 22:20:21.000000', '1', '2', '4', '2022-01-04', '2', '2022-12-24'), ('4', '2021-12-05 21:22:55', '1', '2', '3', '2022-01-05', '2', '2021-12-15');
+INSERT INTO `emprestimo` (`Numero`, `Data_hora`, `Publicacao_Id`, `Exemplar_Nr`, `Utente_Numero`, `Data_de_devolucao_limite`, `Qtd_de_prolongamentos`, `Data_de_devolucao`) VALUES ('5', '2021-02-02', '2', '4', '3', '2021-03-02', '2', '2021-02-12'), ('6', '2021-03-01', '2', '4', '5', '2021-04-01', '2', '2021-03-11'), ('7', '2021-11-01', '2', '4', '2', '2021-12-01', '2', '2021-11-11'), ('8', '2021-10-01', '2', '4', '4', '2021-11-01', '2', '2021-10-11');
+INSERT INTO `emprestimo` (`Numero`, `Data_hora`, `Publicacao_Id`, `Exemplar_Nr`, `Utente_Numero`, `Data_de_devolucao_limite`, `Qtd_de_prolongamentos`, `Data_de_devolucao`) VALUES ('9', '2021-01-11', '4', '11', '4', '2021-02-11', '2', '2021-01-21'), ('10', '2021-10-01', '4', '11', '3', '2021-11-01', '2', '2021-10-11'), ('11', '2021-09-01', '4', '11', '4', '2021-10-01', '2', '2021-09-11'), ('12', '2021-10-02', '4', '12', '4', '2021-11-02', '2', '2021-10-12'), ('13', '2021-10-29', '4', '12', '2', '2021-11-29', '2', '2021-11-09');
+INSERT INTO `emprestimo` (`Numero`, `Data_hora`, `Publicacao_Id`, `Exemplar_Nr`, `Utente_Numero`, `Data_de_devolucao_limite`, `Qtd_de_prolongamentos`, `Data_de_devolucao`) VALUES ('14', '2021-01-10', '5', '14', '2', '2021-02-10', '2', '2021-01-20'), ('15', '2021-02-01', '5', '15', '5', '2021-03-01', '2', '2021-02-11'), ('16', '2021-04-01', '5', '14', '6', '2021-05-01', '2', '2021-04-11');
